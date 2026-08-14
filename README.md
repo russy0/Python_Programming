@@ -2,7 +2,7 @@
 
 [![Language](https://img.shields.io/badge/language-Python-blue.svg)](https://en.wikipedia.org/wiki/Python_(programming_language))
 [![IDE](https://img.shields.io/badge/IDE-PyCharm-black.svg)](https://www.jetbrains.com/pycharm/)
-[![version](https://img.shields.io/badge/version-3.14-orange.svg)](https://gcc.gnu.org/)
+[![version](https://img.shields.io/badge/version-3.14-orange.svg)](https://www.python.org/about/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 > 2026학년도 1학년 2학기 Python 프로그래밍 수업 실습 코드 저장소입니다.
