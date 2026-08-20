@@ -28,9 +28,9 @@ Py_Programming/
 ├── main.py
 ```
 
-| #  | Directory          | Topic |
-|----|--------------------|-|
-| -  | [main.py](main.py) | |
+| #  | Directory                | Topic |
+|----|--------------------------|-|
+| -  | [00_io](00_io/README.md) | |
 
 ## 🚀 Getting Started
 
