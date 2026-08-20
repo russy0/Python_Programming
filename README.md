@@ -28,9 +28,9 @@ Py_Programming/
 ├── 00_io/        # 표준 입출력
 ```
 
-| #  | Directory                | Topic |
-|----|--------------------------|-|
-| -  | [00_io](00_io/README.md) | |
+| #  | Directory                | Topic  |
+|----|--------------------------|--------|
+| -  | [00_io](00_io/README.md) | 표준 입출력 |
 
 ## 🚀 Getting Started
 
