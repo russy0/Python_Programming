@@ -44,7 +44,7 @@ Py_Programming/
 ```bash
 git clone https://github.com/russy0/Py_Programming.git
 cd Py_Programming
-python3 main.py
+python3 <filePath>
 ```
 
 ## 📄 License
