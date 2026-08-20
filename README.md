@@ -25,7 +25,7 @@
 
 ```
 Py_Programming/
-├── main.py
+├── 00_io/        # 표준 입출력
 ```
 
 | #  | Directory                | Topic |
