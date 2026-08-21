@@ -26,11 +26,16 @@
 ```
 Py_Programming/
 ├── 00_io/        # 표준 입출력
+├── 01_datatype/  # 자료형
+
+
 ```
 
-| #  | Directory                | Topic  |
-|----|--------------------------|--------|
-| -  | [00_io](00_io/README.md) | 표준 입출력 |
+| # | Directory                            | Topic       |
+|---|--------------------------------------|-------------|
+| 0 | [00_io](00_io/README.md)             | 표준 입출력 |
+| 1 | [01_datatype](01_datatype/README.md) | 자료형      |
+
 
 ## 🚀 Getting Started
 
