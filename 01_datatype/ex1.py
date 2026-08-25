@@ -32,10 +32,10 @@ x = y = z = 0
 # !name = "크롱"
 # class = "루피"
 
-이름 = "에디" # 비권장
+이름 = '에디' # 비권장
 print(이름)
 
-student_name = "루피" # snake_case
-studentName = "포비" #camelCase
+student_name = '루피' # snake_case
+studentName = '포비' #camelCase
 
 MAX_SCORE = 100
