@@ -32,8 +32,9 @@ Py_Programming/
 
 | # | Directory                            | Topic       |
 |---|--------------------------------------|-------------|
-| 1 | [00_io](00_io/README.md)             | 표준 입출력 |
-| 2 | [01_datatype](01_datatype/README.md) | 자료형      |
+| 0 | [00_io](00_io/README.md)             | 표준 입출력 |
+| 1 | [01_datatype](01_datatype/README.md) | 자료형      |
+| 2 | [02_operator](02_operator/README.md) | 연산자      |
 
 ## 🚀 Getting Started
 
