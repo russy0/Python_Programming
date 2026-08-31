@@ -24,18 +24,16 @@
 
 ```
 Py_Programming/
-├── goorm/  구름 문제 풀이# 
 ├── 00_io/        # 표준 입출력
 ├── 01_datatype/  # 자료형
 
 
 ```
 
-| # | Directory                            | Topic          |
-|---|--------------------------------------|----------------|
-| 0 | [goorm](goorm/README.md)             | 구름 문제 풀이 |
-| 1 | [00_io](00_io/README.md)             | 표준 입출력    |
-| 2 | [01_datatype](01_datatype/README.md) | 자료형         |
+| # | Directory                            | Topic       |
+|---|--------------------------------------|-------------|
+| 1 | [00_io](00_io/README.md)             | 표준 입출력 |
+| 2 | [01_datatype](01_datatype/README.md) | 자료형      |
 
 ## 🚀 Getting Started
 
