@@ -15,3 +15,14 @@ print(3 in [1, 2, 3])
 # 삼항 연산자
 # int max = a>b? a:b
 max_num = a if a > b else b
+
+# a값이 짝수면 "짝수", 홀수면 "홀수" 출력
+a = 11
+print("짝수" if a % 2 == 0 else "홀수")
+
+score = 85
+# 90이상 A
+# 80 -> B
+# 70 -> C
+
+print('A' if score >= 90 else 'B' if score >= 80 else 'C' if score >= 70 else 'D')
