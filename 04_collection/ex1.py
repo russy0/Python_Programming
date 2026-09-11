@@ -76,15 +76,13 @@ print(len(a))
 print(sum(a))
 print(max(a))
 print(min(a))
-print(sorted(a))
+# print(id(a))
 b = sorted(a)
 # print(id(b))
 print(sorted(a, reverse = True))
 
 # 리스트 합치기
-print(a)
 print(a + [10, 20])
-# print(a + 10)
 
 # "+" 연산은 문자열과 동일하게 새로운 리스트 객체를 만듦
 # 원본을 바꾸려면 리스트 메소드 사용하기
