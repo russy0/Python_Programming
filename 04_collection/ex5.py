@@ -5,7 +5,7 @@
 #  딕셔너리의 특징
 #  1. ( mutable, 변경 가능 )
 #  2. ( iterable, 반복 가능 )
-#  3. ( sequence X, 인덱싱과 슬라이싱 불가능 )
+#  3. ( sequence X, 인덱싱과 슬라이싱 불가 )
 #  4. ( 키는 중복 불가, 값은 중복 가능 )
 # ===========================================================
 
@@ -14,7 +14,7 @@ a = {}
 b = dict()
 print(type(a), type(b))
 
-d = {"id": 1611, "name": "송윤우", "age": 17}
+d = {"id": 1601, "name": "구현민", "age": 17}
 print(d)
 
 # 키로 값 가져오기
@@ -22,12 +22,11 @@ print(d["name"])
 # print(d["phone"])
 
 # 에러가 안나게 하려면?
-
 if "phone" in d:
     print(d["phone"])
 
 print(d.get("phone"))
-print(d.get("phone", "전화 없음"))
+print(d.get("phone", "전화없음"))
 
 # ===========================================================
 # 1. 딕셔너리는 mutable하다. (변경 가능)
@@ -35,6 +34,7 @@ print(d.get("phone", "전화 없음"))
 
 d["age"] += 1
 print(d)
+
 d["phone"] = "123-4567"
 print(d)
 
@@ -65,7 +65,7 @@ for key, value in d.items():
 # 3. 딕셔너리는 sequence 객체가 아니다. (인덱싱, 슬라이싱 불가)
 # ===========================================================
 
-d[0] = "1602"  # 0은 새로운 키
+d[0] = "1602"
 print(d)
 
 # ===========================================================
@@ -106,10 +106,14 @@ print(d)
 # 4. 새 hash값을 이용하여 버킷 인덱스를 계산하고 해시테이블에 조회를 하면 원래 데이터를 찾을 수 없음
 
 print(hash(123))
+print(hash(123))
+print(hash(3.14))
 print(hash(3.14))
 print(hash("hi"))
+print(hash("hi"))
 print(hash((1, 2)))
-# print(hash([1, 2]))
+print(hash((1, 2)))
+# print(hash([1,2]))
 
 # ===========================================================
 #  파이썬 내장 함수
@@ -124,14 +128,33 @@ print(min(d), min(d.values()))
 
 print(sorted(d))
 print(sorted(d.items()))
+
+
 # 정렬 기준 설정하기
+# value 기준으로 정렬하기
+def key(x):
+    return x[1]
+
+
+print(dict(sorted(d.items(), key = key)))
+
 # lambda: 이름 없는(익명) 한 줄짜리 함수를 만듦
 # lambda 매개변수1, 매개변수2, ... : 표현식
 
+print(dict(sorted(d.items(), key = lambda x: x[1])))
+print(dict(sorted(d.items(), key = lambda x: x[1], reverse = True)))
+
 # 딕셔너리 합치기
 d2 = {"sci": 95, "prog": 100}
+# print(d + d2)
+print(d | d2)
 
 # 딕셔너리 반복하기
-
+# print(d * 2)
 
 # 멤버십 연산자
+print("kor" in d)
+print("art" in d)
+
+print(90 in d.values())
+print(100 in d.values())
