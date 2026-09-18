@@ -80,7 +80,7 @@ for word in words:
 print(dic)  # ✅ {'apple': 3, 'banana': 2, 'cherry': 1}
 
 # 2) dict 컴프리헨션
-print({word: words.count(word) for word in words})
+print({word: words.count(word) for word in set(words)})
 
 # 3) Counter 클래스: 요소의 빈도수를 세어주는 딕셔너리 서브 class
 from collections import Counter
