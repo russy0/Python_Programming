@@ -56,7 +56,7 @@ import requests
 
 url = "https://httpbin.org/get?user_id=crong"
 
-response = requests.get("https://httpbin.org/get")
+response = requests.get(url)
 
 print(response.status_code)
 print(response.text)
