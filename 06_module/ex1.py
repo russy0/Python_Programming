@@ -62,7 +62,12 @@ print(response.status_code)
 print(response.text)
 print(type(response.text))
 
-d = response.json()
+# 직렬화 역직렬화
+# - 직렬화 (Serialization): 메모리 상의 객체를 파일 저장 or 전송
+# - 역직렬화 (Deserialization): 저장된 or 전송받은 데이터를 원래의 객체 복원
+# - 데이터 직렬화 방식: XML, JSON, YAML
+
+d = response.json()  # 서버가 응답한 JSON 형식의 문자열 -> Python 객체
 print(type(d))
 print(d["args"]["user_id"])
 print(d["headers"]["Host"])
@@ -71,6 +76,14 @@ print(d["headers"]["Host"])
 # 3. 사용자 정의 모듈 만들기
 # ===========================================================
 
+import mymath
+from mymath import PI, add
+
+print(mymath.PI)
+print(mymath.add(20, 30))
+
+print(PI)
+print(add(10, 20))
 
 # __pycache__ 디렉토리란?
 # Python이 실행 속도를 높이기 위해 컴파일된 바이트코드(.pyc)를 캐시로 저장하는 디렉터리
