@@ -30,6 +30,13 @@ print(m.add(10, 20))
 url = "https://httpbin.org/get"
 
 # re-export하지 않은 경우 세부 모듈 경로를 알아야 함
+from requests import api
 
+response = api.get(url)
+print(response.status_code)
 
 # re-export를 한 경우에는 세부 모듈 경로를 몰라도 됨
+import requests
+
+response = requests.get(url)
+print(response.status_code)
