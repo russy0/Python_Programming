@@ -206,29 +206,43 @@ print(Dog)
 
 # Student Class 작성하기
 class Student:
-    pass
+    school = "디미고"
+    count = 0
+
+    def __init__(self, num, name):
+        self.num = num
+        self.name = name
+        Student.count += 1
+
+    def introduce(self):
+        print(f"저는 {self.num} {self.name} 입니다.")
+
+    def introduce2(self):
+        print(f"저는 {Student.school}에 재학중인 {self.num} {self.name} 입니다.")
+
+    @classmethod
+    def get_std_cnt(cls):
+        return cls.count
+
 
 # 1️⃣ 인스턴스 변수: num(학번), name(이름) -> 생성자 구현
 
 
 # 2️⃣ 객체 생성: 생성자 호출
 
-# s1 = Student(1301, "뽀로로")
-# s2 = Student(1401, "크롱")
-
+s1 = Student(1301, "뽀로로")
+s2 = Student(1401, "크롱")
 
 # 3️⃣ 인스턴스 메소드: introduce() 구현
 
-# s1.introduce()                  # 저는 1301 뽀로로 입니다.
-# s2.introduce()                  # 저는 1401 크롱 입니다.
-
+s1.introduce()  # 저는 1301 뽀로로 입니다.
+s2.introduce()  # 저는 1401 크롱 입니다.
 
 # 4️⃣ 클래스 변수: school = "디미고" 추가 -> 인스턴스 메소드: introduce2() 구현
 
-# s1.introduce2()                 # 저는 디미고에 재학중인 1301 뽀로로 입니다.
-# s2.introduce2()                 # 저는 디미고에 재학중인 1401 크롱 입니다.
-
+s1.introduce2()  # 저는 디미고에 재학중인 1301 뽀로로 입니다.
+s2.introduce2()  # 저는 디미고에 재학중인 1401 크롱 입니다.
 
 # 5️⃣ 클래스 메소드: get_std_cnt() 구현 (총 학생 수 리턴)
 
-# print(f"총 학생 수: {Student.get_std_cnt()}명")   # 총 학생 수: 2명
+print(f"총 학생 수: {Student.get_std_cnt()}명")  # 총 학생 수: 2명
