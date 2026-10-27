@@ -26,7 +26,7 @@ import webbrowser
 def get_dog_image():
     try:
         url = "https://dog.ceo/api/breeds/image/random"
-        response = requests.get(url, timeout = 10)
+        response = requests.get(url, timeout=10)
 
         if response.status_code != 200:
             print(f"요청 실패 (상태 코드: {response.status_code})")
@@ -57,7 +57,7 @@ def get_cat_image():
     try:
         url = "https://api.thecatapi.com/v1/images/search"
 
-        response = requests.get(url, timeout = 10)
+        response = requests.get(url, timeout=10)
 
         if response.status_code != 200:
             print(f"요청 실패 (상태 코드: {response.status_code})")
@@ -85,12 +85,12 @@ get_cat_image()
 #  - https://github.com/Hipo/university-domains-list
 # ===========================================================
 
-def get_univ_list(country = "Korea, Republic of"):
+def get_univ_list(country="Korea, Republic of"):
     try:
         url = "http://universities.hipolabs.com/search"
 
         params = {"country": country}
-        response = requests.get(url, params = params, timeout = 10)
+        response = requests.get(url, params=params, timeout=10)
         if response.status_code != 200:
             print(f"요청 실패 (상태 코드: {response.status_code})")
             return
@@ -116,7 +116,6 @@ get_univ_list()
 
 # get_univ_list("United States")
 
-
 # ===========================================================
 #  4. 날씨 조회하기
 #  - https://open-meteo.com/
@@ -128,18 +127,20 @@ def get_weather(lat, lon):
         params = {
             "latitude": lat,
             "longitude": lon,
-            "current": "temperature_2m",
+            "current": ["temperature_2m", "wind_speed_10m"],
             "timezone": "Asia/Tokyo",
         }
 
-        response = requests.get(url, params = params, timeout = 10)
+        response = requests.get(url, params=params, timeout=10)
         if response.status_code != 200:
             print(f"요청 실패 (상태 코드: {response.status_code})")
             return
 
         data = response.json()
         print(data)
-
+        print(f"측정 일시: {data['current']['time']}")
+        print(f"기온: {data['current']['temperature_2m']}{data['current_units']['temperature_2m']}")
+        print(f"풍속: {data['current']['wind_speed_10m']}{data['current_units']['wind_speed_10m']}")
 
     except requests.exceptions.Timeout as e:
         print(f"서버 응답시간 초과: {e}")
@@ -149,4 +150,4 @@ def get_weather(lat, lon):
         print(f"오류 발생: {e}")
 
 
-get_weather(lat = 37.3416467, lon = 126.8310305)
+get_weather(lat=37.3416467, lon=126.8310305)
