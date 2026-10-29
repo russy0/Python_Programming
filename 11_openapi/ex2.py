@@ -63,20 +63,25 @@ def get_weather_info(SERVICE_KEY, base_date=base_date, base_time=base_time):
             return
 
         data = response.json()
-        # pprint.pprint(data)
+        pprint.pprint(data)
 
         # 응답코드 조회
-        result_cd = None
+        result_cd = data['response']['header']['resultCode']
 
         if result_cd != "00":
             print(f"요청 실패 (Open API 결과 코드: {result_cd})")
             return
 
         # 초단기실황조회 결과 출력
-        items = None
+        items = data['response']['body']['items']['item']
 
+        # 강수형태: 0
+        # 습도: 41
+        #
         for item in items:
-            pass
+            print(f"{WEATHER_CODE[item['category']]}: {item['obsrValue']}")
+
+
 
     except requests.exceptions.Timeout as e:
         print(f"서버 응답시간 초과: {e}")
@@ -115,7 +120,7 @@ def get_food_info(KEY, sc_code, schul_code, mlsv_ymd=base_date):
             return
 
         data = response.json()
-        # pprint.pprint(data)
+        pprint.pprint(data)
 
         # 응답코드 조회
         if "RESULT" in data:
@@ -126,6 +131,11 @@ def get_food_info(KEY, sc_code, schul_code, mlsv_ymd=base_date):
 
         # 급식정보 출력
 
+        rows = data['mealServiceDietInfo'][1]['row'][0]
+        print(f"급식일자: {rows['MLSV_YMD']}")
+        print(f"메뉴명: {rows['DDISH_NM']}")
+        print(f"칼로리: {rows['CAL_INFO']}")
+
 
     except requests.exceptions.Timeout as e:
         print(f"서버 응답시간 초과: {e}")
@@ -134,7 +144,8 @@ def get_food_info(KEY, sc_code, schul_code, mlsv_ymd=base_date):
     except Exception as e:
         print(f"오류 발생: {e}")
 
+
 # 나이스 인증키 가져오기
+neis_api_key = os.getenv("NEIS_API_KEY")
 
-
-# get_food_info(neis_api_key, sc_code="J10", schul_code="7530560")
+get_food_info(neis_api_key, sc_code="J10", schul_code="7530560")
